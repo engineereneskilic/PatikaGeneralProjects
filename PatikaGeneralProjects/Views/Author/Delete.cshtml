@@ -10,7 +10,7 @@
     <br>
     <p><strong>Full Name:</strong> @Model.FirstName @Model.LastName</p>
     <p><strong>Date of Birth:</strong> @Model.DateOfBirth</p>
-    <p><strong>Books Written:</strong> @Model.Books.Count</p>
+    <p><strong>Books Written:</strong> @(Model.Books == null ? 0 : Model.Books.Count)</p>
     
     @if (Model.Books != null)
     {
