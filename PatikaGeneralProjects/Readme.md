@@ -1,4 +1,4 @@
-# Library Management System
+# Mini Library Management System
 
 A simple library management system built using ASP.NET Core and PostgreSQL. This system allows users to manage books, authors, and their relationships through a user-friendly interface.
 
