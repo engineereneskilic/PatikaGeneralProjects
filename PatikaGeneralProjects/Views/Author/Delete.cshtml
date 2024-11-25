@@ -1,0 +1,36 @@
+﻿@model MiniLibraryManagementSystem.Models.Author
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete Author</h2>
+
+<div class="details-container">
+    <h3>Are you sure you want to delete this author?</h3>
+    <br>
+    <p><strong>Full Name:</strong> @Model.FirstName @Model.LastName</p>
+    <p><strong>Date of Birth:</strong> @Model.DateOfBirth</p>
+    <p><strong>Books Written:</strong> @Model.Books.Count</p>
+    
+    @if (Model.Books != null)
+    {
+        <h4 style="text-align:left;">
+            Associated Books:
+        </h4>
+    <ul style="text-align:left;">
+
+        @foreach (var Authorbook in Model.Books)
+        {
+            <li>@Authorbook.Title</li>
+        }
+    </ul>
+    }
+
+</div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+
+

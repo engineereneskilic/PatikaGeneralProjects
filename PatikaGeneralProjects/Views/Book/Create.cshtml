@@ -1,0 +1,61 @@
+﻿@model MiniLibraryManagementSystem.Models.BookViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create New Book</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Formu sınırlamak için Bootstrap'in 'col-md-6' sınıfı kullanıldı -->
+            <form asp-action="Create" method="post" class="p-4 border rounded shadow">
+                <h2 class="text-center mb-4">Create Book</h2>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Title" class="form-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="AuthorId" class="form-label">Author</label>
+                    <select asp-for="AuthorId" asp-items="Model.Authors" class="form-select">
+                        <option value="">Select an Author</option>
+                    </select>
+                    <span asp-validation-for="AuthorId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Genre" class="form-label"></label>
+                    <input asp-for="Genre" class="form-control" />
+                    <span asp-validation-for="Genre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="PublishDate" class="form-label"></label>
+                    <input asp-for="PublishDate" class="form-control" type="date" />
+                    <span asp-validation-for="PublishDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="ISBN" class="form-label"></label>
+                    <input asp-for="ISBN" class="form-control" />
+                    <span asp-validation-for="ISBN" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="CopiesAvailable" class="form-label"></label>
+                    <input asp-for="CopiesAvailable" class="form-control" type="number" />
+                    <span asp-validation-for="CopiesAvailable" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

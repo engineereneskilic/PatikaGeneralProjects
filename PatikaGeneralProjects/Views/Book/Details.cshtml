@@ -1,0 +1,14 @@
+﻿@model MiniLibraryManagementSystem.Models.BookViewModel
+
+<h2>Book Details</h2>
+
+<div class="details-container">
+    <p><strong>Title:</strong> @Model.Title</p>
+    <p><strong>Genre:</strong> @Model.Genre</p>
+    <p><strong>Author:</strong> @Model.AuthorFullName</p>
+    <p><strong>Publish Date:</strong> @Model.PublishDate</p>
+    <p><strong>ISBN:</strong> @Model.ISBN</p>
+    <p><strong>Copies Available:</strong> @Model.CopiesAvailable</p>
+</div>
+
+<a href="javascript:history.back()" class="btn btn-secondary btn-back">⬅ Back</a>

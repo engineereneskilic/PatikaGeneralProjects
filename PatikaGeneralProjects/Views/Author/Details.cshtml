@@ -1,0 +1,15 @@
+﻿@model MiniLibraryManagementSystem.Models.AuthorViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Author Details</h2>
+
+<div class="details-container">
+    <p><strong>Full Name:</strong> @Model.FullName</p>
+    <p><strong>Date of Birth:</strong> @Model.DateOfBirth</p>
+    <p><strong>Books Written:</strong> @Model.BookCount</p>
+</div>
+<a href="javascript:history.back()" class="btn btn-secondary btn-back">⬅ Back</a>
+
+

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "AboutUs";
+}
+
+@{
+    ViewData["Title"] = "About";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <img src="~/assets/img/authorBooks.jpg" class="img-fluid rounded-start" alt="Library Image">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body" style="text-align:left;">
+                    <h1 class="card-title text-primary">About Us</h1>
+                    <p class="card-text">
+                        Welcome to the <strong>Library Management System</strong>. This project is designed to simplify
+                        the process of managing books and authors in a library. Whether you’re a librarian or a book enthusiast,
+                        this system provides all the tools you need to organize, search, and manage your collection effectively.
+                    </p>
+                    <p class="card-text">
+                        <strong>Key Features:</strong>
+                        <ul>
+                            <li>Author and Book Management</li>
+                            <li>User-friendly Interface</li>
+                            <li>Built with ASP.NET Core and PostgreSQL</li>
+                        </ul>
+                    </p>
+                    <p class="card-text">
+                        Our mission is to help libraries adapt to the digital age by providing modern, efficient tools for
+                        managing resources and records. Explore the system and experience seamless library management!
+                    </p>
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Go Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

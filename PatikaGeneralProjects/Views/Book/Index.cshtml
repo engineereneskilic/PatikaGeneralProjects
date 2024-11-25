@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model IEnumerable<MiniLibraryManagementSystem.Models.BookViewModel>
+
+<h2>Books</h2>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Author</th>
+            <th>Publish Date</th>
+            <th>Copies Available</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Genre</td>
+                    <td>@book.AuthorFullName</td>
+                    <td>@book.PublishDate</td>
+                    <td>@book.CopiesAvailable</td>
+                    <td>
+                        @*<a href="@Url.Action("Details", "Book", new { id = book.BookID })">Details</a>*@
+                        <a asp-controller="Book" asp-action="Details" asp-route-id="@book.BookID" class="btn btn-details">Details</a>
+
+                        <a asp-controller="Book" asp-action="Edit" asp-route-id="@book.BookID" class="btn btn-sm btn-success">Update</a>
+
+
+                        <a asp-controller="Book" asp-action="Delete" asp-route-id="@book.BookID" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <h3 class="warning-container">Herhangi bir kitap kayıtlı değildir.</h3>
+}
+    </tbody>
+</table>  
+<a asp-controller="Book" asp-action="Create" class="btn btn-details">Add Book</a>
+
+
+

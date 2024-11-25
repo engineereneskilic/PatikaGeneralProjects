@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MiniLibraryManagementSystem.Models.AuthorViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h2>Authors</h2>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Date of Birth</th>
+            <th>Books Written</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var author in Model)
+            {
+                <tr>
+                    <td>@author.FullName</td>
+                    <td>@author.DateOfBirth</td>
+                    <td>@author.BookCount</td>
+                    <td>
+                        <a asp-controller="Author" asp-action="Details" asp-route-id="@author.AuthorID" class="btn btn-details">Details</a>
+
+
+                        <a asp-controller="Author" asp-action="Edit" asp-route-id="@author.AuthorID" class="btn btn-sm btn-success">Update</a>
+
+
+                        <a asp-controller="Author" asp-action="Delete" asp-route-id="@author.AuthorID" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        { <h3 class="warning-container">Herhangi bir yazar kayıtlı değildir.</h3>}
+    </tbody>
+</table>
+<a asp-controller="Author" asp-action="Create" class="btn btn-details">Create Author</a>
+
